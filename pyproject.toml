@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "boilerplate"
+version = "0.1.0"
+description = "A Boilerplate for FastAPI apps with Sqlalchemy and Alembic"
+authors = ["Dylan Medina <dylan@dylanmedina.com>"]
+readme = "README.md"
+homepage = "https://github.com/dlondonmedina/boilerplate"
+repository = "https://github.com/dlondonmedina/boilerplate"
+documentation = "https://github.com/dlondonmedina/boilerplate"
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: FastAPI :: 0.115.5",
+    "Programming Language :: Python :: 3.13 :: Only"
+]
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = {extras = ["standard"], version = "^0.115.5"}
+alembic = "^1.14.0"
+sqlalchemy = "^2.0.36"
+pydantic-settings = "^2.6.1"
+aiosqlite = "^0.20.0"
+
+[tool.poetry.group.test.dependencies]
+tox = "^4.23.2"
+ruff = "^0.8.0"
+mypy = "^1.13.0"
+bandit = "^1.7.10"
+pytest = "^8.3.3"
+coverage = "^7.6.7"
+
+[tool.pytest.ini_options]
+pythonpath = "app"
+
+[tool.mypy]
+check_untyped_defs=true
+disallow_incomplete_defs=true
+disallow_untyped_defs=true
+exclude=['alembic/*$']
+ignore_missing_imports=true
+no_implicit_optional=true
+strict_optional=true
+mypy_path="src"
+warn_redundant_casts=true
+warn_unreachable=true
+warn_unused_ignores=true
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+exclude = ["src/alembic/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "Q", "I"]
+ignore = ["E712"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

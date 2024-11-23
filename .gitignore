@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+env/
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Dependency directories
+lib/
+libs/
+dist/
+build/
+egg-info/
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Linting and Testing directories
+.coverage
+.mypy_cache/
+.pytest_cache/
+.tox/
+.ruff_cache/
+
+# Miscellaneous
+*.swp
+*~
+.DS_Store
+*.db
+*.key
